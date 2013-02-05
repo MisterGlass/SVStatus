@@ -1,0 +1,5 @@
+<?php
+
+$dbname = 'svlogs';
+$dbuser = 'svlogs';
+$dbpass = '12345';
