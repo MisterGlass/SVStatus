@@ -38,11 +38,36 @@ $numNext = $q->rowCount();
 	<canvas id="myCanvas" width="900" height="600"></canvas>
 	<div id="left">
 		<p id="tic">Tic: <span></span></p>
-		<p id="assets"><input type="checkbox" checked="yes" />Assets: <span></span></p>
-		<p id="planets"><input type="checkbox" checked="yes" />Planets: <span></span></p>
-		<p id="ships"><input type="checkbox" checked="yes" />Ships: <span></span></p>
-		<p id="miners"><input type="checkbox" checked="yes" />Miners: <span></span></p>
-		<p id="attackers"><input type="checkbox" checked="yes" />Attackers: <span></span></p>
+		<p id="assets">
+			<label>
+				<input type="checkbox" />
+				<strong>Assets: <span></span></strong>
+			</label>
+		</p>
+		<p id="planets">
+			<label>
+				<input type="checkbox" checked="yes" />
+				<strong>Planets: <span></span></strong>
+			</label>
+		</p>
+		<p id="ships">
+			<label>
+				<input type="checkbox" checked="yes" />
+				<strong>Ships: <span></span></strong>
+			</label>
+		</p>
+		<p id="miners">
+			<label>
+				<input type="checkbox" checked="yes" />
+				<strong>Miners: <span></span></strong>
+			</label>
+		</p>
+		<p id="attackers">
+			<label>
+				<input type="checkbox" checked="yes" />
+				<strong>Attackers: <span></span></strong>
+			</label>
+		</p>
 	</div>
 	<div class="clear"></div>
 	<div id="bottom">

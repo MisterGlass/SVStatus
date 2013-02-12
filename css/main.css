@@ -8,6 +8,8 @@ body	{
 	margin-left: auto;
 	margin-right: auto;
 }
+strong	{
+}
 a	{
 	color: inherit;
 	text-decoration: none;
@@ -32,6 +34,15 @@ a	{
 #tic	{
 	font-size: 32px;
 	font-weight: bold;
+}
+#left input	{
+	display: none;
+}
+#left input + strong	{
+	opacity: 0.4;
+}
+#left input:checked + strong	{
+	opacity: 1;
 }
 #assets	{
 	color: #A179CE;
