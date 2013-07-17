@@ -67,33 +67,22 @@ function drawGraph(logs)	{
 	topTics = 50;
 	if(logs[logs.length-1]['tic'] > topTics) topTics = logs[logs.length-1]['tic'];
 	
-	actualWidth = 890;
+	actualWidth = 940;
 	actualHeight = 590;
 	widthRatio = actualWidth/topTics;
 	heightRatio = actualHeight/topNum;
-	assetHeightRatio = actualHeight/topAssets;
+	assetHeightRatio = actualHeight/Math.log(topAssets);
 	
 	context.lineWidth = 2;
 	context.lineCap = "square";
 	context.lineJoin = "round";
 	
-	if ($('#planets input').attr('checked'))	{
-		context.strokeStyle = "#64992C";
-		context.beginPath();
-		context.moveTo(10,actualHeight);
-		for(i=0;i<logs.length;i++)	{
-			context.lineTo((logs[i]['tic']*widthRatio)+10,actualHeight-(logs[i]['planets']*heightRatio));
-		}
-		context.stroke();
-		context.closePath();
-	}
-	
 	if ($('#ships input').attr('checked'))	{
 		context.strokeStyle = "#F4D35A";
 		context.beginPath();
-		context.moveTo(10,actualHeight);
+		context.moveTo(60,actualHeight);
 		for(i=0;i<logs.length;i++)	{
-			context.lineTo((logs[i]['tic']*widthRatio)+10,actualHeight-(logs[i]['ships']*heightRatio));
+			context.lineTo((logs[i]['tic']*widthRatio)+60,actualHeight-(logs[i]['ships']*heightRatio));
 		}
 		context.stroke();
 		context.closePath();
@@ -102,9 +91,9 @@ function drawGraph(logs)	{
 	if ($('#miners input').attr('checked'))	{
 		context.strokeStyle = "#54A0E2";
 		context.beginPath();
-		context.moveTo(10,actualHeight);
+		context.moveTo(60,actualHeight);
 		for(i=0;i<logs.length;i++)	{
-			context.lineTo((logs[i]['tic']*widthRatio)+10,actualHeight-(logs[i]['miners']*heightRatio));
+			context.lineTo((logs[i]['tic']*widthRatio)+60,actualHeight-(logs[i]['miners']*heightRatio));
 		}
 		context.stroke();
 		context.closePath();
@@ -113,20 +102,33 @@ function drawGraph(logs)	{
 	if ($('#attackers input').attr('checked'))	{
 		context.strokeStyle = "#FEB59C";
 		context.beginPath();
-		context.moveTo(10,actualHeight);
+		context.moveTo(60,actualHeight);
 		for(i=0;i<logs.length;i++)	{
-			context.lineTo((logs[i]['tic']*widthRatio)+10,actualHeight-(logs[i]['attackers']*heightRatio));
+			context.lineTo((logs[i]['tic']*widthRatio)+60,actualHeight-(logs[i]['attackers']*heightRatio));
+		}
+		context.stroke();
+		context.closePath();
+	}
+	var a = 0;
+	if ($('#assets input').attr('checked'))	{
+		context.strokeStyle = "#A179CE";
+		context.beginPath();
+		context.moveTo(60,actualHeight);
+		for(i=0;i<logs.length;i++)	{
+            if(logs[i]['assets'] != 0) a = Math.log(logs[i]['assets']);
+            else a = 0;
+			context.lineTo((logs[i]['tic']*widthRatio)+60,actualHeight-(a*assetHeightRatio));
 		}
 		context.stroke();
 		context.closePath();
 	}
 	
-	if ($('#assets input').attr('checked'))	{
-		context.strokeStyle = "#A179CE";
+	if ($('#planets input').attr('checked'))	{
+		context.strokeStyle = "#64992C";
 		context.beginPath();
-		context.moveTo(10,actualHeight);
+		context.moveTo(60,actualHeight);
 		for(i=0;i<logs.length;i++)	{
-			context.lineTo((logs[i]['tic']*widthRatio)+10,actualHeight-(logs[i]['assets']*assetHeightRatio));
+			context.lineTo((logs[i]['tic']*widthRatio)+60,actualHeight-(logs[i]['planets']*heightRatio));
 		}
 		context.stroke();
 		context.closePath();
@@ -138,8 +140,8 @@ function drawGraph(logs)	{
 	context.lineJoin = "miter";
 	context.strokeStyle = "#444444";
 	context.beginPath();
-	context.moveTo(6,10);
-	context.lineTo(6,actualHeight+3);
+	context.moveTo(56,10);
+	context.lineTo(56,actualHeight+3);
 	context.lineTo(actualWidth,actualHeight+3);
 	context.stroke();
 	context.closePath();

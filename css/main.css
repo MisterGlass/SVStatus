@@ -20,7 +20,7 @@ a	{
 #myCanvas	{
 	float: right;
 	padding-top: 50px;
-	padding-bottom: 30px;
+	padding-bottom: 0px;
 }
 #left	{
 	float: left;
@@ -28,7 +28,7 @@ a	{
 	padding-top: 50px;
 	padding-bottom: 30px;
 	padding-left: 30px;
-	padding-right: 70px;
+	padding-right: 20px;
 	font-size: 20px;
 }
 #tic	{
@@ -63,4 +63,6 @@ a	{
 	text-align: center;
 	Font-weight: bold;
 	font-size: 40px;
+	width: 925px;
+	margin-left: 275px;
 }

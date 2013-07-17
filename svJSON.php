@@ -2,7 +2,7 @@
 include_once "config.php";
 
 //setup DB con
-$db = new PDO('mysql:host=localhost;dbname='.$dbname, $dbuser, $dbpass);
+$db = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
 
 //grab round # from get param or default to last round
 if(isset($_GET['round']) && is_numeric($_GET['round']))	{
